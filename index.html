@@ -35,50 +35,63 @@
     @keyframes blink {
         0%, 100% { opacity: 1; }
         50% { opacity: 0.2; }
-  body {
+    }
+     .rainbow-text {
+      font-size: 64px;
+      animation: rainbow 2s infinite linear;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
+      @keyframes rainbow {
+        0% { background-position: 0% }
+        100% { background-position: 100% }
+    }
+    h1, h2, p {
   margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  font-family: 'PixelFont', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-@font-face {
-  font-family: 'PixelFont';
-  src: url('Fonts/ByteBounce.ttf') format('truetype');
+  line-height: 1.1; /* tighter spacing */
 }
 
 .welcome-text {
   font-size: 24px;
-  margin-top: 40px;
+  color: white;
 }
 
 .ayuh-text {
-  font-size: 64px;
-  animation: rainbow 2s infinite linear;
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 10px 0;
+  font-size: 48px;
+  color: limegreen;
+}
+    .info-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  color: white;
+  font-family: 'PixelFont', sans-serif;
 }
 
-@keyframes rainbow {
-  0% { background-position: 0% }
-  100% { background-position: 100% }
+.info-box h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
 }
 
-
+.info-box p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
 </style>
 </head>
 <body>
 <h1 class="welcome-text">Welcome to the Linguistic World of</h1>
 <h1 class="ayuh-text">AYUH</h1>
-    
 <div class="info-box">
   <h2>What's this?</h2>
   <p>Oh hello. You might wonder what is these "notes" right? Well simply as this, I'm quite (or should I say really?) interested in linguistics. I have been researched quite a bit about this field, and now I want to share here for you guys, and for me, like a collection of linguistic knowledge that I have gathered over the year. Of course, I will try to explain the terms as easy as possible so that you can perhaps learn a little bit about languages around us. To use, just type anything you know in the search bar (or let the suggestions do it), and then ... discover. Happy clonging around!</p>
