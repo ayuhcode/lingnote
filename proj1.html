@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ayuh's Linguistic Notes</title>
+       <style> html, body { margin: 0; padding: 0; } 
+       @font-face { font-family: 'PixelFont'; 
+       src: url('./fonts/ByteBounce.ttf') format('truetype'); } 
+       body { font-family: 'PixelFont', sans-serif; } 
+       </style>
+    </head>
+<style>
+    body {
+        background: black;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .sky {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .star {
+        position: absolute;
+        background: white;
+        width: 2px; /* pixel size */
+        height: 2px;
+        animation: blink infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+    }
+</style>
+</head>
+<body>
+<h1>Pixelated Font Example</h1>
+<div class="sky"></div>
+
+<script>
+(function() {
+    const sky = document.querySelector('.sky');
+    const numStars = 150; // number of stars
+
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        // Random position
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+
+        // Random blink speed between 1s and 3s
+        star.style.animationDuration = (1 + Math.random() * 2).toFixed(2) + 's';
+
+        // Random delay so they don't blink in sync
+        star.style.animationDelay = (Math.random() * 2).toFixed(2) + 's';
+
+        sky.appendChild(star);
+    }
+})();
+</script>
+</body>
+</html>
