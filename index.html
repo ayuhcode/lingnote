@@ -51,13 +51,26 @@
     0% { background-position: 0% }
     100% { background-position: 100% }
   }
+    h1, h2, p {
+  margin: 0;
+  line-height: 1.1; /* tighter spacing */
+}
+
+.welcome-text {
+  font-size: 24px;
+  color: white;
+}
+
+.ayuh-text {
+  font-size: 48px;
+  color: limegreen;
+}
 </style>
 </head>
 <body>
-<h1 style="font-family: 'PixelFont'; font-size: 48px; color: white; text-align: center;">Welcome to the Linguistic World of</h1>
-<h1 class="rainbow-text">AYUH</h1>
+<h1 class="welcome-text">Welcome to the Linguistic World of</h1>
+<h1 class="ayuh-text">AYUH</h1>
 <div class="sky"></div>
-
 <script>
 (function() {
     const sky = document.querySelector('.sky');
