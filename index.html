@@ -62,20 +62,29 @@
 }
 
 .ayuh-text {
-  font-size: 48px;
-  color: limegreen;
+  font-size: 64px;
+  animation: rainbow 2s infinite linear;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 10px 0;
 }
-    .info-box {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 300px;
+
+.info-box {
+  width: 50vw; /* half the screen */
+  max-width: 600px;
   padding: 20px;
+  margin: 30px auto 0 auto; /* center horizontally below title */
   background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid white;
+  box-sizing: border-box; /* keeps border inside */
   color: white;
   font-family: 'PixelFont', sans-serif;
+  text-align: left;
 }
+
 
 .info-box h2 {
   font-size: 24px;
