@@ -36,15 +36,17 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0.2; }
     }
-      .rainbow-text {
-    font-size: 64px;
-    animation: rainbow 2s infinite linear;
-    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-    background-size: 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+     .rainbow-text {
+      font-size: 64px;
+      animation: rainbow 2s infinite linear;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
   @keyframes rainbow {
     0% { background-position: 0% }
     100% { background-position: 100% }
@@ -53,7 +55,7 @@
 </head>
 <body>
 <h1 style="font-family: 'PixelFont'; font-size: 48px; color: white; text-align: center;">Welcome to the Linguistic World of</h1>
-<h1 class="rainbow-text" style="text-align: center;">AYUH</h1>
+<h1 class="rainbow-text">AYUH</h1>
 <div class="sky"></div>
 
 <script>
