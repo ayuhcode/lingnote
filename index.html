@@ -57,7 +57,7 @@
 }
 
 .welcome-text {
-  font-size: 24px;
+  font-size: 64px;
   color: white;
 }
 
@@ -73,26 +73,28 @@
 }
 
 .info-box {
-  width: 50vw; /* half the screen */
+  position: relative;
+  width: 50vw; /* half the screen width */
   max-width: 600px;
   padding: 20px;
-  margin: 30px auto 0 auto; /* center horizontally below title */
-  background-color: rgba(0, 0, 0, 0.7);
+  margin: 30px 0 0 0; /* space below title */
+  background-color: rgba(0, 0, 0, 0.7); /* semi-transparent to show stars */
   border: 2px solid white;
-  box-sizing: border-box; /* keeps border inside */
+  box-sizing: border-box;
   color: white;
   font-family: 'PixelFont', sans-serif;
   text-align: left;
+  align-self: flex-start; /* aligns box to the left in flex layout */
 }
 
 
 .info-box h2 {
-  font-size: 24px;
+  font-size: 34px;
   margin: 0 0 10px 0;
 }
 
 .info-box p {
-  font-size: 14px;
+  font-size: 24px;
   line-height: 1.4;
   margin: 0;
 }
