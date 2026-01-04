@@ -112,6 +112,39 @@
   line-height: 1.4;
   margin: 0;
 }
+    .search-box {
+  width: 50vw; /* half the screen */
+  max-width: 600px;
+  margin: 30px 0 0 auto; /* push to the right side */
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 3px solid limegreen; /* retro pixel vibe */
+  box-sizing: border-box;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.search-box button::before {
+  content: "🔍"; /* magnifier icon */
+  font-size: 18px;
+}
 </style>
 </head>
 <body>
