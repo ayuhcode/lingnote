@@ -15,17 +15,17 @@
         background: black;
         margin: 0;
         height: 100vh;
-        overflow: hidden;
-          padding: 0;
-          background-color: black;
-          color: white;
-          font-family: 'PixelFont', sans-serif;
-          display: flex;
-          flex-direction: column;
-          align-items: center; /* centers title and AYUH */
-          text-align: center;
-}
-
+        body 
+        overflow-x: hidden; /* only hide horizontal overflow */
+        overflow-y: auto;   /* allow vertical scrolling */
+        padding: 0;
+        background-color: black;
+        color: white;
+        font-family: 'PixelFont', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centers title and AYUH */
+        text-align: center;
     }
 
     .sky {
@@ -145,7 +145,7 @@
 .search-box button {
   width: 24px;
   height: 24px;
-  background: url('images/search icon.png') no-repeat center center;
+  background: url('images/search_icon.png') no-repeat center center;
   background-size: contain;
   border: none;
   cursor: pointer;
@@ -298,6 +298,15 @@
       submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
     });
   });
+    document.querySelectorAll('.category-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const submenu = header.nextElementSibling;
+    const icon = header.querySelector('.toggle-icon');
+    const isOpen = submenu.style.display === 'block';
+    submenu.style.display = isOpen ? 'none' : 'block';
+    icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(90deg)';
+  });
+});
 </script>
 
 </body>
