@@ -206,6 +206,14 @@
   text-decoration: none;
   font-size: 14px;
 }
+    .right-panel {
+  width: 50vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keep left-aligned inside right half */
+  margin: 30px 0 0 auto; /* push to right side */
+}
 </style>
 </head>
 <body>
@@ -217,55 +225,59 @@
       <h2>What's this?</h2>
       <p>Oh hello. You might wonder what is these "notes" right? Well simply as this, I'm quite (or should I say really?) interested in linguistics. I have been researched quite a bit about this field, and now I want to share here for you guys, and for me, like a collection of linguistic knowledge that I have gathered over the year. Of course, I will try to explain the terms as easy as possible so that you can perhaps learn a little bit about languages around us. To use, just type anything you know in the search bar (or let the suggestions do it), and then ... discover. Happy clonging around!</p>
     </div>
+  <!-- Right side container -->
+  <div class="right-panel">
     <div class="search-box">
       <input type="text" placeholder="Search something here!" />
       <button></button>
     </div>
-    </div>
+
     <h2 class="menu-title">or follow the categories below!</h2>
-<div class="category-menu">
-  <div class="category">
-    <div class="category-header">
-      <span>Basics</span>
-      <span class="toggle-icon">▶</span>
-    </div>
-    <ul class="submenu">
-      <li><a href="intro.html">Intro to Linguistics</a></li>
-      <li><a href="terms.html">Key Terms</a></li>
-    </ul>
-  </div>
+    <div class="category-menu">
+      <div class="category">
+        <div class="category-header">
+          <span>Basics</span>
+          <span class="toggle-icon">▶</span>
+        </div>
+        <ul class="submenu">
+          <li><a href="intro.html">Intro to Linguistics</a></li>
+          <li><a href="terms.html">Key Terms</a></li>
+        </ul>
+      </div>
 
-  <div class="category">
-    <div class="category-header">
-      <span>Phonetics</span>
-      <span class="toggle-icon">▶</span>
-    </div>
-    <ul class="submenu">
-      <li><a href="ipa.html">IPA Chart</a></li>
-      <li><a href="sounds.html">Speech Sounds</a></li>
-    </ul>
-  </div>
+      <div class="category">
+        <div class="category-header">
+          <span>Phonetics</span>
+          <span class="toggle-icon">▶</span>
+        </div>
+        <ul class="submenu">
+          <li><a href="ipa.html">IPA Chart</a></li>
+          <li><a href="sounds.html">Speech Sounds</a></li>
+        </ul>
+      </div>
 
-  <div class="category">
-    <div class="category-header">
-      <span>Grammar</span>
-      <span class="toggle-icon">▶</span>
-    </div>
-    <ul class="submenu">
-      <li><a href="syntax.html">Syntax</a></li>
-      <li><a href="morphology.html">Morphology</a></li>
-    </ul>
-  </div>
+      <div class="category">
+        <div class="category-header">
+          <span>Grammar</span>
+          <span class="toggle-icon">▶</span>
+        </div>
+        <ul class="submenu">
+          <li><a href="syntax.html">Syntax</a></li>
+          <li><a href="morphology.html">Morphology</a></li>
+        </ul>
+      </div>
 
-  <div class="category">
-    <div class="category-header">
-      <span>Vocabs & Languages</span>
-      <span class="toggle-icon">▶</span>
+      <div class="category">
+        <div class="category-header">
+          <span>Vocabs & Languages</span>
+          <span class="toggle-icon">▶</span>
+        </div>
+        <ul class="submenu">
+          <li><a href="etymology.html">Etymology</a></li>
+          <li><a href="language-list.html">Language Families</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="submenu">
-      <li><a href="etymology.html">Etymology</a></li>
-      <li><a href="language-list.html">Language Families</a></li>
-    </ul>
   </div>
 </div>
 <script>
