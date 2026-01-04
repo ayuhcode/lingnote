@@ -247,6 +247,29 @@
   text-decoration: underline;
   color: #00ffff;
 }
+    .spaceship {
+  position: fixed;
+  top: 50%;              /* start vertically centered */
+  left: -100px;          /* start off-screen to the left */
+  width: 60px;
+  height: 30px;
+  background: url('images/spaceship.png') no-repeat center center;
+  background-size: contain;
+  animation: fly 12s linear infinite;
+  z-index: 500;          /* above stars but below text */
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(120vw) translateY(-50px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
 </style>
 </head>
 <body>
@@ -325,7 +348,7 @@
 </audio>
 
 <button id="music-toggle" class="music-toggle">🔊</button>
-
+<div class="spaceship"></div>
 <script>
   const music = document.getElementById('bg-music');
   const toggleBtn = document.getElementById('music-toggle');
