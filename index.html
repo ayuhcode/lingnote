@@ -150,7 +150,62 @@
   border: none;
   cursor: pointer;
 }
+.menu-title {
+  font-size: 20px;
+  color: white;
+  font-family: 'PixelFont', sans-serif;
+  margin: 40px 0 10px;
+  text-align: center;
+}
 
+.category-menu {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.category {
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid cyan;
+  padding: 10px;
+  font-family: 'PixelFont', sans-serif;
+  color: white;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.category:hover .toggle-icon {
+  transform: rotate(90deg);
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 10px;
+  margin-top: 10px;
+  display: none;
+}
+
+.submenu li {
+  margin: 5px 0;
+}
+
+.submenu a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 14px;
+}
 </style>
 </head>
 <body>
@@ -167,6 +222,52 @@
       <button></button>
     </div>
     </div>
+    <h2 class="menu-title">or follow the categories below!</h2>
+<div class="category-menu">
+  <div class="category">
+    <div class="category-header">
+      <span>Basics</span>
+      <span class="toggle-icon">▶</span>
+    </div>
+    <ul class="submenu">
+      <li><a href="intro.html">Intro to Linguistics</a></li>
+      <li><a href="terms.html">Key Terms</a></li>
+    </ul>
+  </div>
+
+  <div class="category">
+    <div class="category-header">
+      <span>Phonetics</span>
+      <span class="toggle-icon">▶</span>
+    </div>
+    <ul class="submenu">
+      <li><a href="ipa.html">IPA Chart</a></li>
+      <li><a href="sounds.html">Speech Sounds</a></li>
+    </ul>
+  </div>
+
+  <div class="category">
+    <div class="category-header">
+      <span>Grammar</span>
+      <span class="toggle-icon">▶</span>
+    </div>
+    <ul class="submenu">
+      <li><a href="syntax.html">Syntax</a></li>
+      <li><a href="morphology.html">Morphology</a></li>
+    </ul>
+  </div>
+
+  <div class="category">
+    <div class="category-header">
+      <span>Vocabs & Languages</span>
+      <span class="toggle-icon">▶</span>
+    </div>
+    <ul class="submenu">
+      <li><a href="etymology.html">Etymology</a></li>
+      <li><a href="language-list.html">Language Families</a></li>
+    </ul>
+  </div>
+</div>
 <script>
 (function() {
     const sky = document.querySelector('.sky');
@@ -190,5 +291,14 @@
     }
 })();
 </script>
+    <script>
+  document.querySelectorAll('.category-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const submenu = header.nextElementSibling;
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
+
 </body>
 </html>
