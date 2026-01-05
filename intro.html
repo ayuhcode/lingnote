@@ -125,6 +125,25 @@
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+.article-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.7);
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.column {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: left;
+  color: white;
+}
 
   </style>
 </head>
@@ -136,17 +155,23 @@
   <span class="big-letter shimmer-L">L</span>inguistics?
 </h1>
 
-  <div class="article">
+  <div class="article-columns">
+  <div class="column">
     <p>
-      Linguistics is the scientific study of language. It explores how languages are structured,
-      how they evolve, and how humans use them in communication.
-    </p>
-    <p>
-      In this article, we’ll look at the basics of linguistics — from phonetics and grammar
-      to vocabulary and language families. This is your starting point for exploring the
-      fascinating world of language.
+      Have you ever wondered why languages, like English or Vietnamese, are created; or why they are so so different that we have to spend some time just to learn them? That's what <b>Linguistics</b>
+      try to answer! Well actually linguistics has to answer more questions than that: the meaning (syntax), the sound (phonology), the word structure (morphology), or context of meaning (pragmatics).
+      It can even goes beyond to other disciplines such as biolinguistics, where we study about the biological evolution of language, or psycholinguistics, which relates to psychological aspects as well.
     </p>
   </div>
+  <div class="column">
+    <p>
+      In here, we will just learn one or two basic things about linguistics (since I don't have much expertise to go farther than that). Languages around us are so fascinating, and I hope that when you finished reading this collection, you
+      will no longer find learning a second language boring, because there will sure be so many fun facts waiting for you!
+    </p>
+    <!-- Add your second column content here -->
+  </div>
+</div>
+
 
   <a href="index.html" class="back-link">⬅ Back to Home</a>
 
