@@ -126,6 +126,7 @@
   100% { background-position: 200% 0; }
 }
 .article-columns {
+  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 40px;
@@ -144,16 +145,19 @@
   text-align: left;
   color: white;
 }
-.pixel-gif {
-  width: 80px;           /* adjust size */
-  position: absolute;    /* if you want it to float */
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+
+/* GIF styling */
+.border-gif {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: auto;
+  z-index: 10;
 }
+
   </style>
 </head>
-  <img src="images/bbddwclsebi91.gif" alt="Pixel sparkle" class="pixel-gif">
 <body>
   <div class="sky"></div>
 
@@ -163,6 +167,7 @@
 </h1>
 
   <div class="article-columns">
+      <img src="images/bbddwclsebi91.gif" alt="Pixel sparkle" class="pixel-gif">
   <div class="column">
     <p>
       Have you ever wondered why languages, like English or Vietnamese, are created; or why they are so so different that we have to spend some time just to learn them? That's what <b>Linguistics</b>
