@@ -29,6 +29,22 @@
       height: 100%;
       z-index: -1;
     }
+        /* Music toggle button */
+    .music-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: cyan;
+      font-family: 'PixelFont', sans-serif;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .music-toggle.playing {
+      text-shadow: 0 0 8px cyan;
+    }
     .star {
       position: absolute;
       background: white;
@@ -90,6 +106,29 @@
     .back-link:hover {
       text-decoration: underline;
     }
+    .rainbow-text {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-move 3s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes rainbow-move {
+  0% { background-position: 0% }
+  100% { background-position: 100% }
+}
+
   </style>
 </head>
 <body>
@@ -100,15 +139,12 @@
   <div class="columns">
     <div class="text-column">
       <p>
-        This side is for text. You can write definitions, explanations, or notes about linguistic terms here.
-      </p>
-      <p>
-        Example: <strong>Phoneme</strong> — the smallest unit of sound in a language.
+       Here will be the key terms - the starter pack for you before entering the lingnote. I will use quite a lot of linguistic terms so
+      I hope this can help!
       </p>
     </div>
-
     <div class="image-column">
-      <img src="images/example.png" alt="Example image">
+      <img src="images/kt-1.gif" alt="Example image">
     </div>
   </div>
 
@@ -129,6 +165,40 @@
         sky.appendChild(star);
       }
     })();
+      // Music toggle
+    const music = document.getElementById('bg-music');
+    const toggleBtn = document.getElementById('music-toggle');
+
+    toggleBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        music.volume = 0;
+        let vol = 0;
+        const fade = setInterval(() => {
+          if (vol < 1) {
+            vol += 0.05;
+            music.volume = vol;
+          } else {
+            clearInterval(fade);
+          }
+        }, 100);
+        toggleBtn.textContent = "🔊";
+        toggleBtn.classList.add("playing");
+      } else {
+        let vol = music.volume;
+        const fade = setInterval(() => {
+          if (vol > 0) {
+            vol -= 0.05;
+            music.volume = vol;
+          } else {
+            clearInterval(fade);
+            music.pause();
+          }
+        }, 100);
+        toggleBtn.textContent = "🔇";
+        toggleBtn.classList.remove("playing");
+      }
+    });
   </script>
 </body>
 </html>
