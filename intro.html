@@ -93,21 +93,15 @@
     }
 .title {
   font-family: 'PixelFont', sans-serif;
+  color: cyan;
   text-align: center;
   margin-top: 40px;
-  line-height: 0.8;
+  font-size: 64px; /* base size for the rest of the word */
 }
 
 .big-letter {
-  font-size: 120px;
-  display: block;
-  margin-bottom: -30px;
-}
-
-.rest-word {
-  font-size: 64px;
-  display: block;
-  color: cyan;
+  font-size: 120px;   /* much larger than the rest */
+  vertical-align: middle; /* keeps it aligned nicely */
 }
 
 /* Pixel shimmer effect */
@@ -139,8 +133,7 @@
 
   <h1 class="title">
   What is...<br>
-  <span class="big-letter shimmer-L">L</span><br>
-  <span class="rest-word">inguistics?</span>
+  <span class="big-letter shimmer-L">L</span>inguistics?
 </h1>
 
   <div class="article">
