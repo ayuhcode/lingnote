@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Intro to Linguistics</title>
   <style>
-    /* Font import */
     @font-face {
       font-family: 'PixelFont';
       src: url('Fonts/ByteBounce.ttf') format('truetype');
@@ -47,14 +46,12 @@
       50% { opacity: 0.2; }
     }
 
-    /* Title */
     h1 {
       font-size: 64px;
       color: cyan;
       margin-top: 40px;
     }
 
-    /* Article box */
     .article {
       max-width: 800px;
       margin: 40px auto;
@@ -66,7 +63,6 @@
       line-height: 1.6;
     }
 
-    /* Back link */
     .back-link {
       display: block;
       margin: 30px auto;
@@ -77,6 +73,23 @@
     }
     .back-link:hover {
       text-decoration: underline;
+    }
+
+    /* Music toggle button */
+    .music-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: cyan;
+      font-family: 'PixelFont', sans-serif;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .music-toggle.playing {
+      text-shadow: 0 0 8px cyan;
     }
   </style>
 </head>
@@ -99,12 +112,19 @@
 
   <a href="index.html" class="back-link">⬅ Back to Home</a>
 
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="audio/in_your_arms.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Toggle button -->
+  <button id="music-toggle" class="music-toggle">🔊</button>
+
   <script>
     // Generate stars
     (function() {
       const sky = document.querySelector('.sky');
       const numStars = 150;
-
       for (let i = 0; i < numStars; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -115,6 +135,41 @@
         sky.appendChild(star);
       }
     })();
+
+    // Music toggle
+    const music = document.getElementById('bg-music');
+    const toggleBtn = document.getElementById('music-toggle');
+
+    toggleBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        music.volume = 0;
+        let vol = 0;
+        const fade = setInterval(() => {
+          if (vol < 1) {
+            vol += 0.05;
+            music.volume = vol;
+          } else {
+            clearInterval(fade);
+          }
+        }, 100);
+        toggleBtn.textContent = "🔊";
+        toggleBtn.classList.add("playing");
+      } else {
+        let vol = music.volume;
+        const fade = setInterval(() => {
+          if (vol > 0) {
+            vol -= 0.05;
+            music.volume = vol;
+          } else {
+            clearInterval(fade);
+            music.pause();
+          }
+        }, 100);
+        toggleBtn.textContent = "🔇";
+        toggleBtn.classList.remove("playing");
+      }
+    });
   </script>
 </body>
 </html>
