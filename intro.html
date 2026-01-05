@@ -5,26 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Intro to Linguistics</title>
   <style>
+    /* Font import */
+    @font-face {
+      font-family: 'PixelFont';
+      src: url('Fonts/ByteBounce.ttf') format('truetype');
+    }
+
     body {
+      margin: 0;
+      padding: 0;
       background: black;
       color: white;
       font-family: 'PixelFont', sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 48px;
-      color: cyan;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
-    p {
-      font-size: 20px;
-      line-height: 1.5;
-      max-width: 800px;
-      margin: 20px auto;
-      text-align: left;
+
+    /* Sky background */
+    .sky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
-    a.back-link {
+
+    .star {
+      position: absolute;
+      background: white;
+      width: 2px;
+      height: 2px;
+      animation: blink infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    /* Title */
+    h1 {
+      font-size: 64px;
+      color: cyan;
+      margin-top: 40px;
+    }
+
+    /* Article box */
+    .article {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      border: 2px solid white;
+      text-align: left;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    /* Back link */
+    .back-link {
       display: block;
       margin: 30px auto;
       text-align: center;
@@ -32,26 +75,46 @@
       text-decoration: none;
       font-size: 18px;
     }
-    a.back-link:hover {
+    .back-link:hover {
       text-decoration: underline;
     }
-    .mega-title {
-  font-size: 120px;  
-  color: cyan;
-  text-align: center;
-}
   </style>
 </head>
 <body>
-  <h1 class="mega-title">L</h1><h1>inguistics</h1>
-  <p>
-    Welcome to your very first article! 🎉  
-    Here you can explain what linguistics is, why it matters, and share your thoughts in a simple way.
-  </p>
-  <p>
-    Linguistics is the scientific study of language. It explores how languages are structured, how they evolve, and how humans use them in communication.
-  </p>
+  <div class="sky"></div>
+
+  <h1>Intro to Linguistics</h1>
+
+  <div class="article">
+    <p>
+      Linguistics is the scientific study of language. It explores how languages are structured,
+      how they evolve, and how humans use them in communication.
+    </p>
+    <p>
+      In this article, we’ll look at the basics of linguistics — from phonetics and grammar
+      to vocabulary and language families. This is your starting point for exploring the
+      fascinating world of language.
+    </p>
+  </div>
+
   <a href="index.html" class="back-link">⬅ Back to Home</a>
+
+  <script>
+    // Generate stars
+    (function() {
+      const sky = document.querySelector('.sky');
+      const numStars = 150;
+
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.animationDuration = (1 + Math.random() * 2).toFixed(2) + 's';
+        star.style.animationDelay = (Math.random() * 2).toFixed(2) + 's';
+        sky.appendChild(star);
+      }
+    })();
+  </script>
 </body>
 </html>
-
