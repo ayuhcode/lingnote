@@ -91,18 +91,28 @@
     .music-toggle.playing {
       text-shadow: 0 0 8px cyan;
     }
-    .title {
+.title {
   font-family: 'PixelFont', sans-serif;
   color: cyan;
   text-align: center;
   margin-top: 40px;
-  font-size: 64px; /* base size for the rest of the word */
+  line-height: 1;
 }
 
 .big-letter {
-  font-size: 120px;   /* much larger than the rest */
-  vertical-align: middle; /* keeps it aligned nicely */
+  font-size: 120px;
+  display: inline-block;
+  margin-right: -20px; /* nudges L to the right */
+  vertical-align: top;
 }
+
+.rest-word {
+  font-size: 64px;
+  display: inline-block;
+  position: relative;
+  left: -10px; /* nudges inguistics left to stack better */
+}
+
 
   </style>
 </head>
@@ -111,7 +121,8 @@
 
   <h1 class="title">
   What is...<br>
-  <span class="big-letter">L</span>inguistics?
+  <span class="big-letter">L</span><span class="rest-word">inguistics</span>
+
 </h1>
 
   <div class="article">
