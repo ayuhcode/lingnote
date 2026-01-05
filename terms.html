@@ -20,6 +20,7 @@
       overflow-x: hidden;
     }
 
+    /* Starry background */
     .sky {
       position: fixed;
       top: 0;
@@ -28,7 +29,6 @@
       height: 100%;
       z-index: -1;
     }
-
     .star {
       position: absolute;
       background: white;
@@ -36,7 +36,6 @@
       height: 2px;
       animation: blink infinite;
     }
-
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.2; }
@@ -49,15 +48,35 @@
       margin-top: 40px;
     }
 
-    .content-box {
+    /* Two-column layout without border */
+    .columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
       max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
-      background-color: rgba(0,0,0,0.7);
-      border: 2px solid white;
       box-sizing: border-box;
+    }
+
+    .text-column {
+      flex: 1;
       font-size: 20px;
       line-height: 1.6;
+      text-align: left;
+      color: white;
+    }
+
+    .image-column {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-column img {
+      max-width: 100%;
+      height: auto;
     }
 
     .back-link {
@@ -76,21 +95,27 @@
 <body>
   <div class="sky"></div>
 
-  <h1>Key Terms</h1>
+  <h1>Key Terms in Linguistics</h1>
 
-  <div class="content-box">
-    <p>
-      This page will collect and define important linguistic terms you'll encounter throughout your journey.
-      From phonemes and morphemes to syntax and semantics, each concept will be explained in a simple, pixel-perfect way.
-    </p>
-    <p>
-      You can expand this section with definitions, examples, and even visual aids or GIFs to make each term come alive.
-    </p>
+  <div class="columns">
+    <div class="text-column">
+      <p>
+        This side is for text. You can write definitions, explanations, or notes about linguistic terms here.
+      </p>
+      <p>
+        Example: <strong>Phoneme</strong> — the smallest unit of sound in a language.
+      </p>
+    </div>
+
+    <div class="image-column">
+      <img src="images/example.png" alt="Example image">
+    </div>
   </div>
 
   <a href="index.html" class="back-link">⬅ Back to Home</a>
 
   <script>
+    // Generate stars
     (function() {
       const sky = document.querySelector('.sky');
       const numStars = 150;
