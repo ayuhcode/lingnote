@@ -142,6 +142,23 @@
   0% { background-position: 0% }
   100% { background-position: 100% }
 }
+    .article-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.7);
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.column {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: left;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -168,6 +185,7 @@
   <div class="image-column">
     <img src="images/transparent_pixel_space_gif_by_kirusenpai_d9vllht-fullview.png" alt="Second example image">
   </div>
+        <img src="images/giphy.gif" alt="Example image" style="width: 250px; height: auto;">
   <div class="text-column">
     <p>
   Have you ever had a desire to be able to read a foreign sentences without learning that actual foreign language? Well one of the most powerful
@@ -181,8 +199,8 @@
     </p>
   </div>
 </div>
-  <div class="columns">
-    <div class="text-column">
+    <div class="article-columns">
+  <div class="column">
       <p>
        We are humans, the most intelligent creatures on Earth. That's why we have the ability to express hundreds of thousands ways in just a 
       single sentence. And in linguistics, those ways are called as <span class="key-terms">moods</span> and <span class="key-terms">cases</span>.<br/>
@@ -194,9 +212,11 @@
         that now the dog is not receiving the action anymore, reversely he is the one that DOES the action, in a case so-called as subject case. And in the third
       sentence, the dog now neither does or receives the action, he is OWING the object - the toy; this is called the possessive case. So through
       these three sentences, the roles of the word "dog" is not the same.<br/>
-
+      </p>
+  </div>
+<div class="column">
       Grammatical mood, on the other hand, denote the "feeling" or "attitude" that the speakers want to imply in a sentence. Back to our dog,
-      let's take another three examples:
+      let's take another three examples:<br/>
         <i>The dog is an animal</i><br/><i>Pet the dog!</i><br/><i>I wish the dog were here</i><br/>
         In the first sentence, we simply just tell the fact - everyone knows that a dog is indeed an animal; this is called the indicative mood.
       Moving on to the second sentence, the listeners will clearly know that we are not in the same mood anymore, we are CALLING them, or, 
@@ -207,9 +227,7 @@
       Of course, those are not the total number of cases and moods in linguistics. You can see all of them here.
       </p>
     </div>
-    <div class="image-column">
-      <img src="images/giphy.gif" alt="Example image" style="width: 100px; height: auto;">
-    </div>
+
   </div>
   <a href="index.html" class="back-link">⬅ Back to Home</a>
 
